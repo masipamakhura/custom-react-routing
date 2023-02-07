@@ -1,0 +1,40 @@
+<script>
+
+var configureBillboard = [];
+    var search = setInterval(function(){
+        
+         configureBillboard = document.querySelectorAll('a.billboard-link-layer');
+        stopSearch();
+    },50)
+
+function stopSearch(){
+    if(configureBillboard != null && configureBillboard.length > 0){
+        clearInterval(search);
+
+        console.log('OT-1803-challenger')
+           //configureBillboard[1].href = "https://www.ford.it/acquista/acquista-online/configura-la-tua-ford/ice#/model?catalogId=WAEIX-CTW-2023-ExplorerITA202300 ";
+           configureBillboard[2].removeAttribute('data-analytics-direct-call-rule');
+           configureBillboard[3].removeAttribute('data-analytics-direct-call-rule')
+           configureBillboard[2].href = "https://www.ford.it/acquista/configura-la-tua-ford/ice#/model?catalogId=WAEIX-CF7-2020-PumaITA202325 ";
+           configureBillboard[3].href = "https://www.ford.it/acquista/configura-la-tua-ford/ice#/model?catalogId=WAEIX-CTD-2019-KugaITA202325";
+
+           
+                      
+                      window.targetCampaign = {
+                        page: {
+                          campaignName: 'tt:nwp:opt-1803:ab:hp:billboard-match:challenger'
+                    
+                        }
+                    }
+             
+                  _satellite.track('genericTestingImpressionIDWorkaround');
+                  
+              
+                }            
+
+    
+}
+
+       
+
+    </script>
