@@ -1,13 +1,27 @@
-import Button from "./Button";
+import Accordion from './components/Accordion';
 
-function App(){
+function App() {
+  const items = [
+    {
+      id:'0',
+      label:'first accordion item on a list ',
+      content:'collapes first accordion item on a list content'
+    },
+    {
+      id:'1',
+      label:'second accordion item on a list ',
+      content:'collapes second accordion item on a list content'
+    },
+    {
+      id:'2',
+      label:'third accordion item on a list ',
+      content:'collapes third accordion item on a list content'
+    }
+  ];
 
-    return <div>
-        <div><Button primary outline>Hi there !</Button></div>
-        <div><Button  danger>Hello world 1</Button></div>
-        <div><Button warning>Hello world 2</Button></div>
-        <div><Button success outline >Hello world 3</Button></div>
-        <div><Button secondary rounded >Hello world 4</Button></div>
-    </div>
+  return (
+    <Accordion items={items} />
+    
+  );
 }
 export default App;
