@@ -1,28 +1,28 @@
-import { useState } from "react";
-import Dropdown from "./components/DropDown";
-import AccordionPage from "./pages/AccodionPage";
 
+import Route from "./components/Route";
+import AccordionPage from "./pages/AccodionPage";
+import DropDownPage from "./pages/DropdownPage";
+import ButtonPage from "./pages/ButtonPage";
+import Sidebar from "./components/Sidebar";
+import ModalPage from "./pages/ModalPage";
 function App() {
-  const [selection, setSelection] = useState(null);
-  const handleSelect = (option) => {
-    console.log("set selected option", option);
-    setSelection(option);
-    console.log("selected option VALUE", selection)
-  };
-  const options = [
-    { label: "Red", value: "Red" },
-    { label: "Green", value: "Green" },
-    { label: "Blue", value: "Blue" },
-  ];
-  return (
-    <div>
-      
-      <Dropdown
-        options={options}
-        value={selection}
-        onChange={handleSelect}
-      />
+  
+  return <div className="container mx-auto grid grid-cols-6 gap-4 mt-4">
+    <Sidebar />
+    <div className="col-span-5">
+    <Route path="/accordion">
+      <AccordionPage />
+    </Route>
+    <Route path="/">
+      <DropDownPage />
+    </Route>
+    <Route path="/buttons">
+      <ButtonPage />
+    </Route>
+    <Route path="/modal">
+      <ModalPage />
+    </Route>
     </div>
-  );
+  </div>
 }
 export default App;
