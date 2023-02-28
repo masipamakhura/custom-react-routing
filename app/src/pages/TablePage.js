@@ -1,5 +1,5 @@
-
-import Table from "../components/Table";
+import SortableTable from "../components/SortableTable";
+//import Table from "../components/Table";
 
 function TablePage (){
     const data = [
@@ -11,16 +11,19 @@ function TablePage (){
     const config = [
         {label:"Name",
         render : (fruit)=> fruit.name,
+        sortValue:(fruit) => fruit.name
         },
         {label:"Color",
         render: (fruit) =><div className={`p-3 m-2 ${fruit.color}`} />,
         },
         {label:"Score",
-         render: (fruit) => fruit.score
+         render: (fruit) => fruit.score,
+         //header:(key)=> <th key={key} className="bg-red-500">Score</th>,
+         sortValue:(fruit) => fruit.score
         },
     ]
 
-    return <Table data={data}  config={config}/>
+    return <SortableTable data={data}  config={config}/>
 }
 
 export default TablePage;
