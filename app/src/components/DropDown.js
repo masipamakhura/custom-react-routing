@@ -19,14 +19,17 @@ function Dropdown({ options, value, onChange }) {
     };
   }, []);
 
+    
   const handleClick = () => {
     setIsOpen((currentIsOpen) => !currentIsOpen);
   };
 
+    
   const handleOptionsClick = (option) => {
     setIsOpen(false);
     onChange(option);
   };
+
 
   const renderdOptions = options.map((option) => (
     <div
@@ -37,6 +40,7 @@ function Dropdown({ options, value, onChange }) {
       <div>{option.label}</div>
     </div>
   ));
+    
 
   return (
     <div ref={divEl} className="w-48 relative">
